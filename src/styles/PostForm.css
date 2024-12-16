@@ -1,0 +1,128 @@
+/* Post Form Overlay (Backdrop) */
+.post-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Post Form Card (Main Floating Window) */
+  .post-form-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    animation: popIn 0.3s ease-out; /* Animation for popup effect */
+  }
+  
+  /* Post Form Header */
+  .post-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Post Input Area */
+  .post-input {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    resize: none;
+    box-sizing: border-box;
+  }
+  
+  /* File Options */
+  .file-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .file-option {
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  /* Image Preview */
+  .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .preview-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #555;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Animation for Popup */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

@@ -1,0 +1,166 @@
+/* Main container for the feeds page */
+.feeds-container {
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    padding: 16px;
+  }
+  
+  /* Container for the list of posts */
+  .posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 100px; /* Space for floating button */
+  }
+  
+  /* Each post card */
+  .post-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Post content text */
+  .post-content {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Image gallery in posts */
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .post-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Timestamp */
+  .post-time {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 10px;
+  }
+  
+  /* Post actions (like, comment, share buttons) */
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  
+  .like-btn, .comment-btn, .share-btn {
+    background-color: transparent;
+    border: none;
+    color: #3498db;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .like-btn:hover, .comment-btn:hover, .share-btn:hover {
+    color: #2980b9;
+  }
+  
+  /* Popup overlay (for creating new posts) */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  /* Popup content (form for creating new post) */
+  .popup-content {
+    background-color: white;
+    padding: 32px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Close button for the popup */
+  .close-popup-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .close-popup-btn:hover {
+    color: #333;
+  }
+  
+  /* Loading text */
+  .loading-text {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* Floating action button */
+  .floating-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    padding: 16px;
+    font-size: 24px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .floating-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .post-card {
+      padding: 12px;
+    }
+  
+    .image-gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .post-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  
