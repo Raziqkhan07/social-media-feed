@@ -3,6 +3,8 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css'; 
+import images from '../images.json'; // Background and Google images
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -11,7 +13,7 @@ const Login = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log(result.user);
-      navigate('/feed'); // Redirect to feed after login
+      navigate('/feed'); // Redirect after successful login
     } catch (error) {
       console.error(error.message);
     }
@@ -19,17 +21,31 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <div className="background-images">
-        <img src="image1.jpg" alt="Background 1" className="bg-img" />
-        <img src="image2.jpg" alt="Background 2" className="bg-img" />
-        <img src="image3.jpg" alt="Background 3" className="bg-img" />
-        <img src="image4.jpg" alt="Background 4" className="bg-img" />
-      </div>
+      {/* Background Image Grid */}
+       <div className="background-images">
+        <img src={images.greenleaves} alt="Background 1" className="bg-img" />
+        <img src={images.nature} alt="Background 2" className="bg-img" />
+        <img src={images.beauty} alt="Background 3" className="bg-img" />
+        <img src={images.nature1} alt="Background 4" className="bg-img" />
+        <img src={images.nature1} alt="Background 5" className="bg-img" />
+        <img src={images.greenleaves} alt="Background 1" className="bg-img" />
+        <img src={images.nature1} alt="Background 2" className="bg-img" />
+        <img src={images.beauty} alt="Background 3" className="bg-img" />
+        <img src={images.nature1} alt="Background 4" className="bg-img" />
+        <img src={images.nature1} alt="Background 5" className="bg-img" />
+        <img src={images.greenleaves} alt="Background 1" className="bg-img" />
+        <img src={images.nature1} alt="Background 2" className="bg-img" />
+        <img src={images.beauty} alt="Background 3" className="bg-img" />
+        <img src={images.nature1} alt="Background 4" className="bg-img" />
+        <img src={images.nature1} alt="Background 5" className="bg-img" />
+      </div> 
+      
+      {/* Hover Card */}
       <div className="login-card">
         <h1 className="title">Vibesnap</h1>
         <p className="subheading">Moments That Matter, Shared Forever.</p>
         <button className="google-login-btn" onClick={handleGoogleLogin}>
-          <img src="google-icon.png" alt="Google Icon" className="google-icon" />
+          <img src={images.google} alt="Google Icon" className="google-icon" />
           Continue with Google
         </button>
       </div>
